@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <script src="CookieHandler.js"></script>
+    <script type="text/javascript">
+        function addCookie() {
+            var date = new Date()
+            var cookieHandler = new Browser.CookieHandler();
+            cookieHandler.save(date.toLocaleString(), 'saveMeCookie', 1);
+        }
+        function readCookie() {
+            var cookieHandler = new Browser.CookieHandler();
+            var result = cookieHandler.read('saveMeCookie') ? cookieHandler.read('saveMeCookie') : 'Click Create cookie first.';
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+    <h1>CookieHandler</h1>
+
+    <div id="content">
+        <a href="#" onclick="addCookie();">Create cookie</a>
+        <a href="#" onclick="readCookie();">Read cookie</a>
+    </div>
+</body>
+</html>
